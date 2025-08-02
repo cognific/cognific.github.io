@@ -4,126 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cognific AI - Coming Soon</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #0a0a0a;
-            background-image: 
-                radial-gradient(circle at 20% 50%, #0f1f0f 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, #0a1a0a 0%, transparent 50%);
-            color: #00ff00;
-            font-family: 'Courier New', monospace;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            position: relative;
-        }
-
-        body::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            bottom: 10px;
-            border: 1px solid #00ff00;
-            border-radius: 4px;
-            pointer-events: none;
-            box-shadow: 
-                0 0 20px #00ff00,
-                inset 0 0 20px rgba(0, 255, 0, 0.1);
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 0.8;
-                box-shadow: 
-                    0 0 20px #00ff00,
-                    inset 0 0 20px rgba(0, 255, 0, 0.1);
-            }
-            50% {
-                opacity: 1;
-                box-shadow: 
-                    0 0 40px #00ff00,
-                    inset 0 0 30px rgba(0, 255, 0, 0.2);
-            }
-        }
-
-        .container {
-            text-align: center;
-            z-index: 1;
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            font-weight: 300;
-            letter-spacing: 0.2em;
-            margin-bottom: 1rem;
-            text-shadow: 
-                0 0 5px #ff0000,
-                0 0 10px #ff0000,
-                0 0 20px #ff0000,
-                0 0 40px #ff0000,
-                0 0 80px #ff0000,
-                0 0 120px #ff0000,
-                0 0 160px #ff0000;
-            animation: flicker 3s ease-in-out infinite;
-        }
-
-        @keyframes flicker {
-            0%, 100% {
-                text-shadow: 
-                    0 0 5px #ff0000,
-                    0 0 10px #ff0000,
-                    0 0 20px #ff0000,
-                    0 0 40px #ff0000,
-                    0 0 80px #ff0000,
-                    0 0 120px #ff0000,
-                    0 0 160px #ff0000;
-            }
-            50% {
-                text-shadow: 
-                    0 0 2px #ff0000,
-                    0 0 5px #ff0000,
-                    0 0 10px #ff0000,
-                    0 0 20px #ff0000,
-                    0 0 40px #ff0000,
-                    0 0 60px #ff0000,
-                    0 0 80px #ff0000;
-            }
-        }
-
-        p {
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            letter-spacing: 0.1em;
-            opacity: 0.8;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                letter-spacing: 0.1em;
-            }
-            
-            p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Cognific AI - Next-generation artificial intelligence solutions. Revolutionary AI technology coming soon. Join our waitlist for early access.">
+    <meta name="keywords" content="AI, artificial intelligence, machine learning, deep learning, neural networks, cognific, AI solutions, AI platform">
+    <meta name="author" content="Cognific AI">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cognific.ai/">
+    <meta property="og:title" content="Cognific AI - Revolutionary AI Solutions Coming Soon">
+    <meta property="og:description" content="Next-generation artificial intelligence solutions. Join our waitlist for early access to revolutionary AI technology.">
+    <meta property="og:image" content="https://cognific.ai/og-image.jpg">
+    <meta property="og:site_name" content="Cognific AI">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cognific.ai/">
+    <meta name="twitter:title" content="Cognific AI - Revolutionary AI Solutions Coming Soon">
+    <meta name="twitter:description" content="Next-generation artificial intelligence solutions. Join our waitlist for early access.">
+    <meta name="twitter:image" content="https://cognific.ai/twitter-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://cognific.ai/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Security Headers (better set via server, but included here) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Fallback styles for noscript -->
+    <noscript>
+        <style>
+            .js-only { display: none !important; }
+        </style>
+    </noscript>
 </head>
 <body>
-    <div class="container">
+    <!-- Skip to content link for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <!-- Main content -->
+    <main id="main" class="container" role="main">
         <h1>COGNIFIC AI</h1>
-        <p>Coming Soon</p>
-    </div>
+        <p class="tagline">Coming Soon</p>
+        
+        <!-- Email signup form -->
+        <form class="signup-form" id="signup-form" action="mailto:contact@cognific.ai" method="post" enctype="text/plain">
+            <label for="email" class="visually-hidden">Email address for updates</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="Enter your email for updates" 
+                required
+                aria-required="true"
+                aria-describedby="email-error"
+            >
+            <button type="submit" aria-label="Sign up for email updates">Notify Me</button>
+            <span id="email-error" class="visually-hidden" role="alert"></span>
+        </form>
+        
+        <div id="success-message" class="success-message" role="status" aria-live="polite">
+            Thank you! We'll notify you when we launch.
+        </div>
+        
+        <!-- Social links -->
+        <nav class="social-links" aria-label="Social media links">
+            <a href="https://x.com/cognific-ai" rel="noopener noreferrer" target="_blank" aria-label="Follow us on Twitter">Twitter</a>
+            <a href="https://linkedin.com/company/cognific-ai" rel="noopener noreferrer" target="_blank" aria-label="Connect on LinkedIn">LinkedIn</a>
+            <a href="https://github.com/cognific" rel="noopener noreferrer" target="_blank" aria-label="View our GitHub">GitHub</a>
+        </nav>
+    </main>
+    
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>&copy; 2024 Cognific AI. All rights reserved. <a href="/privacy" aria-label="Privacy Policy">Privacy</a> | <a href="/terms" aria-label="Terms of Service">Terms</a></p>
+    </footer>
+    
+    <!-- Simple form handler script -->
+    <script>
+        // Progressive enhancement - form still works without JS
+        const form = document.getElementById('signup-form');
+        const successMessage = document.getElementById('success-message');
+        
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get email value
+                const email = document.getElementById('email').value;
+                
+                // In a real implementation, this would send to a backend API
+                // For now, we'll show success and open mailto
+                successMessage.classList.add('show');
+                
+                // Create mailto link with subject and body
+                const subject = encodeURIComponent('Cognific AI - Waitlist Signup');
+                const body = encodeURIComponent(`Please add me to the Cognific AI waitlist.\n\nEmail: ${email}`);
+                window.location.href = `mailto:contact@cognific.ai?subject=${subject}&body=${body}`;
+                
+                // Reset form
+                form.reset();
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            });
+        }
+    </script>
 </body>
 </html>

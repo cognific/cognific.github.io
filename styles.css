@@ -1,0 +1,329 @@
+/* CSS Custom Properties for easy maintenance */
+:root {
+    --color-primary: #00ff00;
+    --color-accent: #ff0000;
+    --color-bg: #0a0a0a;
+    --color-bg-gradient-1: #0f1f0f;
+    --color-bg-gradient-2: #0a1a0a;
+    --font-primary: 'Courier New', Courier, monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui;
+    --animation-duration: 3s;
+    --border-glow-size: 20px;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Accessibility: Skip link for keyboard navigation */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: var(--color-bg);
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Visually hidden but accessible to screen readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Body styles */
+body {
+    background: var(--color-bg);
+    background-image: 
+        radial-gradient(circle at 20% 50%, var(--color-bg-gradient-1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, var(--color-bg-gradient-2) 0%, transparent 50%);
+    color: var(--color-primary);
+    font-family: var(--font-primary);
+    min-height: 100vh;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+}
+
+/* Animated border */
+body::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    pointer-events: none;
+    box-shadow: 
+        0 0 var(--border-glow-size) var(--color-primary),
+        inset 0 0 var(--border-glow-size) rgba(0, 255, 0, 0.1);
+    animation: pulse var(--animation-duration) ease-in-out infinite;
+}
+
+/* Optimized pulse animation using transform */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.005);
+    }
+}
+
+/* Main container */
+.container {
+    text-align: center;
+    z-index: 1;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Typography */
+h1 {
+    font-size: 3.5rem; /* Fallback for browsers that don't support clamp */
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+    text-shadow: 
+        0 0 10px var(--color-accent),
+        0 0 40px var(--color-accent),
+        0 0 80px var(--color-accent);
+    animation: flicker var(--animation-duration) ease-in-out infinite;
+}
+
+/* Optimized flicker animation */
+@keyframes flicker {
+    0%, 100% {
+        opacity: 1;
+        text-shadow: 
+            0 0 10px var(--color-accent),
+            0 0 40px var(--color-accent),
+            0 0 80px var(--color-accent);
+    }
+    50% {
+        opacity: 0.95;
+        text-shadow: 
+            0 0 5px var(--color-accent),
+            0 0 20px var(--color-accent),
+            0 0 40px var(--color-accent);
+    }
+}
+
+.tagline {
+    font-size: 1rem; /* Fallback */
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+/* Email signup form */
+.signup-form {
+    margin: 3rem 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.signup-form input[type="email"] {
+    flex: 1;
+    min-width: 250px;
+    padding: 12px 20px;
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    font-family: inherit;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.signup-form input[type="email"]:focus {
+    outline: none;
+    background: rgba(0, 255, 0, 0.15);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.signup-form input[type="email"]::placeholder {
+    color: rgba(0, 255, 0, 0.6);
+}
+
+.signup-form button {
+    padding: 12px 30px;
+    background: var(--color-primary);
+    color: var(--color-bg);
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signup-form button:hover {
+    background: #00cc00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+}
+
+.signup-form button:active {
+    transform: scale(0.98);
+}
+
+/* Success message */
+.success-message {
+    color: var(--color-primary);
+    margin-top: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.success-message.show {
+    opacity: 1;
+}
+
+/* Social links */
+.social-links {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.social-links a {
+    color: var(--color-primary);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 1;
+    text-shadow: 0 0 10px var(--color-primary);
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 0.875rem;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        letter-spacing: 0.1em;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+    .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .signup-form input[type="email"] {
+        min-width: auto;
+    }
+}
+
+/* Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *, 
+    *::before, 
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    /* Keep static glow effects without animation */
+    body::before {
+        opacity: 0.9;
+        box-shadow: 
+            0 0 20px var(--color-primary),
+            inset 0 0 20px rgba(0, 255, 0, 0.1);
+    }
+    
+    h1 {
+        text-shadow: 
+            0 0 10px var(--color-accent),
+            0 0 40px var(--color-accent);
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --color-primary: #00ff00;
+        --color-accent: #ff0000;
+        --color-bg: #000000;
+    }
+    
+    .signup-form input[type="email"] {
+        border-width: 2px;
+    }
+    
+    .signup-form button {
+        border: 2px solid var(--color-bg);
+    }
+}
+
+/* Print styles */
+@media print {
+    body::before {
+        display: none;
+    }
+    
+    h1 {
+        animation: none;
+        text-shadow: none;
+    }
+    
+    .signup-form,
+    .social-links,
+    footer {
+        display: none;
+    }
+}
