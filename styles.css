@@ -106,6 +106,25 @@ body::before {
     max-width: 600px;
 }
 
+/* Mascot image */
+.mascot-image {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 2rem;
+    display: block;
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(255, 165, 0, 0.5));
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 /* Typography */
 h1 {
     font-size: 3.5rem; /* Fallback for browsers that don't support clamp */
@@ -273,6 +292,12 @@ footer {
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+    .mascot-image {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1.5rem;
+    }
+    
     h1 {
         letter-spacing: 0.1em;
         font-size: 2.5rem; /* Ensure minimum readable size */
@@ -294,6 +319,11 @@ footer {
 
 /* Extra small devices */
 @media (max-width: 480px) {
+    .mascot-image {
+        width: 100px;
+        height: 100px;
+    }
+    
     h1 {
         font-size: 2.5rem; /* Keep consistent minimum size */
         letter-spacing: 0.05em;
